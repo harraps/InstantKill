@@ -1,0 +1,69 @@
+{
+  "behaviors": {
+    "ApplyTexture": {
+      "scriptId": "8",
+      "line": 1,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "texture",
+          "type": "string"
+        }
+      ]
+    },
+    "PlayerController": {
+      "scriptId": "11",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "sensitivity",
+          "type": "number"
+        },
+        {
+          "name": "moveSpeed",
+          "type": "number"
+        },
+        {
+          "name": "jumpForce",
+          "type": "number"
+        },
+        {
+          "name": "dashSpeed",
+          "type": "number"
+        },
+        {
+          "name": "dashTime",
+          "type": "number"
+        },
+        {
+          "name": "steepSlope",
+          "type": "number"
+        },
+        {
+          "name": "fireRate",
+          "type": "number"
+        },
+        {
+          "name": "hookForce",
+          "type": "number"
+        }
+      ]
+    },
+    "PostProcess": {
+      "scriptId": "22",
+      "line": 1,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "shaderPaths",
+          "type": "string"
+        },
+        {
+          "name": "useSkybox",
+          "type": "boolean"
+        }
+      ]
+    }
+  }
+}

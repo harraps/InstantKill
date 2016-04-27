@@ -1,0 +1,129 @@
+[
+  {
+    "id": "0",
+    "name": "src",
+    "type": null,
+    "children": [
+      {
+        "id": "16",
+        "name": "Importer",
+        "type": "script"
+      },
+      {
+        "id": "6",
+        "name": "Util",
+        "type": "script"
+      },
+      {
+        "id": "5",
+        "name": "InputManager",
+        "type": "script"
+      },
+      {
+        "id": "9",
+        "name": "World",
+        "type": "script"
+      },
+      {
+        "id": "1",
+        "name": "Game",
+        "type": "script"
+      },
+      {
+        "id": "10",
+        "name": "player",
+        "type": null,
+        "children": [
+          {
+            "id": "11",
+            "name": "Controller",
+            "type": "script"
+          },
+          {
+            "id": "13",
+            "name": "Input",
+            "type": "script"
+          },
+          {
+            "id": "21",
+            "name": "Status",
+            "type": "script"
+          },
+          {
+            "id": "12",
+            "name": "Look",
+            "type": "script"
+          },
+          {
+            "id": "17",
+            "name": "Move",
+            "type": "script"
+          },
+          {
+            "id": "18",
+            "name": "Ground",
+            "type": "script"
+          },
+          {
+            "id": "19",
+            "name": "Gun",
+            "type": "script"
+          },
+          {
+            "id": "20",
+            "name": "Hook",
+            "type": "script"
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "name": "util",
+        "type": null,
+        "children": [
+          {
+            "id": "8",
+            "name": "ApplyTexture",
+            "type": "script"
+          },
+          {
+            "id": "22",
+            "name": "PostProcess",
+            "type": "script"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "res",
+    "type": null,
+    "children": []
+  },
+  {
+    "id": "3",
+    "name": "prefab",
+    "type": null,
+    "children": [
+      {
+        "id": "14",
+        "name": "player",
+        "type": null,
+        "children": [
+          {
+            "id": "15",
+            "name": "Controller",
+            "type": "scene"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "map",
+    "type": null,
+    "children": []
+  }
+]
