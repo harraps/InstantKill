@@ -58,7 +58,7 @@ class PlayerLook {
         let from = Util.getCannonVec(pos);
         let to   = Util.getCannonVec(des);
         let ray  = new CANNON.Ray(from, to);
-        ray.intersectWorld(Sup.Cannon.getWorld(), { collisionFilterMask: filter, collisionFilterGroup: -1 });
+        ray.intersectWorld(Sup.Cannon.getWorld(), { mode: CANNON.Ray.CLOSEST, collisionFilterMask: filter, collisionFilterGroup: -1, skipBackfaces: true });
         // even if the ray has not hit, we want the hitpoint to be setted
         if(!ray.result.hasHit) ray.result.hitPointWorld = to;
         // we return the result of the raycast

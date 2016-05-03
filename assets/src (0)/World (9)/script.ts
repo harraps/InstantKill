@@ -1,5 +1,7 @@
 class World {
     
+    public player : PlayerController;
+    
     // default material to apply
     public material : CANNON.Material;
     
@@ -10,8 +12,9 @@ class World {
     protected grounds : IGround[];
     
     public constructor(){
+        Sup.Cannon.resetWorld();
         let world = Sup.Cannon.getWorld();
-        world.gravity.set(0, -6000, 0);
+        world.gravity.set(0, -100, 0);
         world.defaultContactMaterial.friction = 0.1;
         
         this.material = new CANNON.Material("material");
@@ -50,11 +53,11 @@ class World {
         // we recover the prototype and the old step function
         var oldPrototype = world.step.prototype;
         var oldStep = world.step;
-        var match = this;
+        var thiz = this;
         // we change the step function
         world.step = function(){
             // we update the IGrounds
-            for( let ground of match.grounds ){
+            for( let ground of thiz.grounds ){
                 ground.updatePosition();
             }
             // we execute the default behavior of CANNON.world

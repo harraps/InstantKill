@@ -33,6 +33,7 @@ class InputManager {
         // jump and hook(bis)
         this.keys1["jump"] = "SPACE";
         this.keys1["hook"] = "SHIFT";
+        //this.keys2["hook"] = "SPACE";
         
         // arms controls
         this.mouse["fire"] = 0; // left  click
@@ -91,7 +92,7 @@ class InputManager {
     private static checkInput( array : number[]|string[], call : Function, input : string ) : boolean{
         // if the input is set in the array
         // we call the function with the specified input
-        if( array[input] ) return call( array[input] );
+        if( array[input] != null ) return call( array[input] );
     }
 
 }

@@ -90,6 +90,11 @@
             "id": "22",
             "name": "PostProcess",
             "type": "script"
+          },
+          {
+            "id": "36",
+            "name": "RotateToLook",
+            "type": "script"
           }
         ]
       }
@@ -99,7 +104,62 @@
     "id": "2",
     "name": "res",
     "type": null,
-    "children": []
+    "children": [
+      {
+        "id": "24",
+        "name": "props",
+        "type": null,
+        "children": [
+          {
+            "id": "32",
+            "name": "base",
+            "type": "model"
+          },
+          {
+            "id": "25",
+            "name": "grass",
+            "type": "model"
+          },
+          {
+            "id": "34",
+            "name": "skybox",
+            "type": "model"
+          }
+        ]
+      },
+      {
+        "id": "26",
+        "name": "player",
+        "type": null,
+        "children": [
+          {
+            "id": "37",
+            "name": "gun",
+            "type": "model"
+          },
+          {
+            "id": "31",
+            "name": "blast",
+            "type": "model"
+          },
+          {
+            "id": "28",
+            "name": "trail",
+            "type": "model"
+          },
+          {
+            "id": "27",
+            "name": "wire",
+            "type": "model"
+          },
+          {
+            "id": "30",
+            "name": "crosshair",
+            "type": "sprite"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "3",
@@ -115,6 +175,21 @@
             "id": "15",
             "name": "Controller",
             "type": "scene"
+          },
+          {
+            "id": "29",
+            "name": "HUD",
+            "type": "scene"
+          },
+          {
+            "id": "33",
+            "name": "Base",
+            "type": "scene"
+          },
+          {
+            "id": "35",
+            "name": "Skybox",
+            "type": "scene"
           }
         ]
       }
@@ -124,6 +199,12 @@
     "id": "4",
     "name": "map",
     "type": null,
-    "children": []
+    "children": [
+      {
+        "id": "23",
+        "name": "Test",
+        "type": "scene"
+      }
+    ]
   }
 ]

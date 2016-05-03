@@ -29,14 +29,6 @@
           "type": "number"
         },
         {
-          "name": "dashSpeed",
-          "type": "number"
-        },
-        {
-          "name": "dashTime",
-          "type": "number"
-        },
-        {
           "name": "steepSlope",
           "type": "number"
         },
@@ -50,20 +42,11 @@
         }
       ]
     },
-    "PostProcess": {
-      "scriptId": "22",
-      "line": 1,
+    "RotateToLook": {
+      "scriptId": "36",
+      "line": 0,
       "parentBehavior": null,
-      "properties": [
-        {
-          "name": "shaderPaths",
-          "type": "string"
-        },
-        {
-          "name": "useSkybox",
-          "type": "boolean"
-        }
-      ]
+      "properties": []
     }
   }
 }

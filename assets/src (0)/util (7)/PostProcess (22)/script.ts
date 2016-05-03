@@ -1,5 +1,5 @@
 // this behavior only work when added to an actor with a camera
-class PostProcess extends Sup.Behavior {
+/*class PostProcess extends Sup.Behavior {
     
     // will load shaders that are defined in the assets manager
     public shaderPaths : string; // format : "path1/shader1;path2/shader2"
@@ -119,3 +119,4 @@ class PostProcess extends Sup.Behavior {
     }
 }
 Sup.registerBehavior(PostProcess);
+*/

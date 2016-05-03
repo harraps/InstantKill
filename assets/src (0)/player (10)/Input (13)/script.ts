@@ -2,12 +2,21 @@
 class PlayerInput {
     
     private jumpCounter : number;
+    private mouseLock   : boolean;
     
     public constructor() {
         this.jumpCounter = 0;
+        this.mouseLock   = true;
+        Sup.Input.lockMouse();
     }
     
     public update() {
+        // if the player press escape
+        if(Sup.Input.wasKeyJustPressed("ESCAPE")){
+            this.mouseLock = !this.mouseLock; // we toggle the mouse lock
+            if(this.mouseLock) Sup.Input.lockMouse();
+            else Sup.Input.unlockMouse();
+        }
         // if the player just pressed the jump key, he wants to jump
         if(Game.inputManager.wasInputJustPressed("jump")) this.jumpCounter = 10;
         // if the counter is set, we decrement it
@@ -51,6 +60,6 @@ class PlayerInput {
     
     // true if the player is holding the hook key
     public get Hook() : boolean {
-        return Game.inputManager.wasInputJustPressed("hook");
+        return Game.inputManager.isInputDown("hook");
     }
 }

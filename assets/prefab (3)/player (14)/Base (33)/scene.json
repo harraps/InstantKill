@@ -1,0 +1,132 @@
+{
+  "formatVersion": 1,
+  "nodes": [
+    {
+      "id": "0",
+      "name": "Base",
+      "children": [
+        {
+          "id": "1",
+          "name": "HUD",
+          "children": [],
+          "components": [],
+          "position": {
+            "x": 0,
+            "y": 2,
+            "z": 0.6
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": {
+            "sceneAssetId": "29"
+          }
+        },
+        {
+          "id": "2",
+          "name": "Skybox",
+          "children": [],
+          "components": [],
+          "position": {
+            "x": 0,
+            "y": -2,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": {
+            "sceneAssetId": "35"
+          }
+        }
+      ],
+      "components": [
+        {
+          "type": "CannonBody",
+          "config": {
+            "formatVersion": 2,
+            "mass": 0,
+            "fixedRotation": false,
+            "group": 1,
+            "mask": 1,
+            "shape": "cylinder",
+            "positionOffset": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "orientationOffset": {
+              "x": -90,
+              "y": 0,
+              "z": 0
+            },
+            "halfSize": {
+              "x": 0.5,
+              "y": 0.5,
+              "z": 0.5
+            },
+            "radius": 3.7,
+            "height": 7.5,
+            "segments": 16
+          },
+          "id": "0"
+        },
+        {
+          "type": "ModelRenderer",
+          "config": {
+            "formatVersion": 1,
+            "modelAssetId": "32",
+            "animationId": null,
+            "castShadow": false,
+            "receiveShadow": false,
+            "color": "ffffff",
+            "overrideOpacity": false,
+            "opacity": null,
+            "materialType": "basic",
+            "shaderAssetId": null
+          },
+          "id": "1"
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "orientation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "visible": true,
+      "layer": 0,
+      "prefab": null
+    }
+  ]
+}

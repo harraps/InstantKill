@@ -1,4 +1,5 @@
 class PlayerController extends Sup.Behavior {
+    private static maxSpeed : number = 100;
     
     // editable attributes:
     // look
@@ -6,8 +7,6 @@ class PlayerController extends Sup.Behavior {
     // move
     public moveSpeed   : number = 20; // speed of the body
     public jumpForce   : number = 30; // force applied to the body when jumping
-    public dashSpeed   : number = 80; // speed of the body while in dash
-    public dashTime    : number = 60; // time of the dash in frames
     // ground
     public steepSlope  : number = 50; // how steep is the ground the player can walk on
     // gun
@@ -28,6 +27,7 @@ class PlayerController extends Sup.Behavior {
     public torso   : Sup.Actor; // allow to rotate the player horizontally
     public head    : Sup.Actor; // allow to rotate the camera up and down
     public emitter : Sup.Actor; // allow to set the position of the trail
+    public blast   : Sup.Actor; // blast effect to display when we shoot on something
     public trail   : Sup.Actor; // trail effect of the gun
     public wire    : Sup.Actor; // wire of the grappling hook
     
@@ -40,17 +40,20 @@ class PlayerController extends Sup.Behavior {
         this.torso   = this.actor.getChild("Torso"  );
         this.head    = this.actor.getChild("Head"   );
         this.emitter = this.actor.getChild("Emitter");
+        this.blast   = this.actor.getChild("Blast"  );
         this.trail   = this.actor.getChild("Trail"  );
         this.wire    = this.actor.getChild("Wire"   );
         // we don't want the trail to follow the player around, so we unparent it
+        this.blast.setParent(null);
         this.trail.setParent(null);
         // both trail and wire should be displayed only when necessary
+        this.blast.setVisible(false);
         this.trail.setVisible(false);
         this.wire .setVisible(false);
         
         let body = this.actor.cannonBody.body;
-        this.collider = <CANNON.Cylinder> body.shapes[0];
         body.material = Game.world.material;
+        this.collider = <CANNON.Cylinder> body.shapes[0];
         // we recover the bottom right vertice of the collider and copy it
         this.bottom = this.collider.vertices[0].clone();
         this.bottom.x = 0; // we push the vertice in the center of the face
@@ -63,6 +66,8 @@ class PlayerController extends Sup.Behavior {
         this.ground = new PlayerGround(this);
         this.gun    = new PlayerGun   (this);
         this.hook   = new PlayerHook  (this);
+        
+        Game.world.player = this;
     }
 
     public update() {
@@ -73,12 +78,20 @@ class PlayerController extends Sup.Behavior {
         this.ground.update();
         this.gun   .update();
         this.hook  .update();
+        // we prevent the controller to go too fast
+        let body = this.actor.cannonBody.body;
+        let max  = PlayerController.maxSpeed;
+        if(body.velocity.lengthSquared() > max*max){
+            body.velocity.normalize();
+            body.velocity = body.velocity.scale(max);
+        }
     }
     
     public onDestroy(){
         //Game.world.removeStatus();
         Game.world.removeGround(this.ground);
         // we also need the destroy the trail since it's no longer attached to the controller
+        this.blast.destroy();
         this.trail.destroy();
     }
     

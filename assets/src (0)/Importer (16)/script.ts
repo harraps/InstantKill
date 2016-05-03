@@ -12,7 +12,7 @@ THREE = window.SupEngine.THREE;
          // soundcloud SDK API
         "http://connect.soundcloud.com/sdk.js",
         // postprocess scripts
-        "http://threejs.org/examples/js/postprocessing/EffectComposer.js",
+        /*"http://threejs.org/examples/js/postprocessing/EffectComposer.js",
         "http://threejs.org/examples/js/postprocessing/ClearPass.js",
         "http://threejs.org/examples/js/postprocessing/RenderPass.js",
         "http://threejs.org/examples/js/postprocessing/MaskPass.js",
@@ -20,7 +20,7 @@ THREE = window.SupEngine.THREE;
         // shader scripts
         "http://threejs.org/examples/js/shaders/CopyShader.js",
         "http://threejs.org/examples/js/shaders/DotScreenShader.js",
-        "http://threejs.org/examples/js/shaders/RGBShiftShader.js",
+        "http://threejs.org/examples/js/shaders/RGBShiftShader.js",*/
     ];
     for( let script of scripts ){
         let script_div = window.document.createElement('script');

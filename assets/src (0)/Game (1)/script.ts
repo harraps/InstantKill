@@ -14,8 +14,7 @@
 let Game = {
     
     // input manager allow us to specify the inputs of the game for the user
-    inputManager : new InputManager(),
+    inputManager : new InputManager("AZERTY"),
     world : new World(),
-    
 };
 

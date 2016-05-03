@@ -81,7 +81,7 @@ class PlayerGround {
         to  .y += -0.5;
         let ray = new CANNON.Ray(from, to);
         // we perform the raycast
-        ray.intersectWorld(Sup.Cannon.getWorld(), {collisionFilterMask: -1, collisionFilterGroup: -1});
+        ray.intersectWorld(Sup.Cannon.getWorld(), {collisionFilterMask: -1, collisionFilterGroup: -1, skipBackfaces:true});
         // if we hit something with our raycast
         if(ray.hasHit){
             // we compare the hit normal to the vector up
@@ -105,6 +105,7 @@ class PlayerGround {
                     this.platform = null;
                     // we cannot support moving platform if the platform is not kinematic
                 }
+                return true;
             }
         }
         // we didn't hit something, we are not grounded

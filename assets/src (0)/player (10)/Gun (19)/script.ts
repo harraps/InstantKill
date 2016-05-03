@@ -16,6 +16,7 @@ class PlayerGun {
 
     public update() {
         let input = this.ctrl.input.Fire;
+        let blast = this.ctrl.blast;
         let trail = this.ctrl.trail;
         
         // if the recoil timer is set, we deacrement it
@@ -25,9 +26,14 @@ class PlayerGun {
         if(this.trailTimer > 0){
             --this.trailTimer; // we deacrement the timer
             // we update the opacity of the trail
-            trail.modelRenderer.setOpacity(this.trailTimer*0.03);
+            let opacity = this.trailTimer*0.03;
+            trail.modelRenderer.setOpacity(opacity);
+            blast.modelRenderer.setOpacity(opacity);
             // if we passed the limit, the trail is no longer visible
-            if(this.trailTimer <= 0) trail.setVisible(false);
+            if(this.trailTimer <= 0){
+                blast.setVisible(false);
+                trail.setVisible(false);
+            }
             
         }
         
@@ -39,9 +45,13 @@ class PlayerGun {
             
             // we cast a ray in the direction of the look
             let result = this.ctrl.look.raycast();
-            
             // if we hit something
             if( result.hasHit ){
+                // we hit something so we display a blast
+                blast.setVisible(true);
+                blast.modelRenderer.setOpacity(1);
+                blast.setPosition(result.hitPointWorld);
+                
                 // we recover the status of the collided object
                 let status = Game.world.getStatus(result.body.id);
                 // if the hit body has a status, we damage it
