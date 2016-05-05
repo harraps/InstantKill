@@ -10,7 +10,8 @@ class PlayerController extends Sup.Behavior {
     // ground
     public steepSlope  : number = 50; // how steep is the ground the player can walk on
     // gun
-    public fireRate    : number = 60; // fire rate of the gun in frames
+    public fireRate    : number = 60;  // fire rate of the gun in frames
+    public propelForce : number = 200; // propeling force of the impact when shooting at your feet
     // hook
     public hookForce   : number = 40; // force applied to the body when hooked
     
@@ -72,7 +73,7 @@ class PlayerController extends Sup.Behavior {
 
     public update() {
         this.input .update();
-        this.status.update();
+        //this.status.update();
         this.look  .update();
         this.move  .update();
         this.ground.update();

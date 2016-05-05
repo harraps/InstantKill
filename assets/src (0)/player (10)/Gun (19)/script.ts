@@ -56,6 +56,10 @@ class PlayerGun {
                 let status = Game.world.getStatus(result.body.id);
                 // if the hit body has a status, we damage it
                 if(status) status.damage(this.ctrl.status);
+                
+                for( let id in Game.world.status ){
+                    Game.world.status[id].propels(this.ctrl.propelForce, result.hitPointWorld);
+                }
             }
             
             // we update the trail effect

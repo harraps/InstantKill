@@ -5,8 +5,9 @@ class World {
     // default material to apply
     public material : CANNON.Material;
     
-    // holds the status of the player of the game
-    protected status : {[key:number]:IStatus}; // we use a map instead of a list to avoid null values
+    // holds the status of the players of the game
+    // key = id of the cannonBody of the player
+    public status : {[key:number]:IStatus}; // we use a map instead of a list to avoid null values
     
     // holds the ground modules to update
     protected grounds : IGround[];
@@ -32,8 +33,8 @@ class World {
     public getStatus(id : number){
         return this.status[id];
     }
-    public addStatus(status : IStatus){
-        this.status[status.id] = status;
+    public addStatus(id : number, status : IStatus){
+        this.status[id] = status;
     }
     public removeStatus(status : IStatus){
         delete this.status[status.id];
@@ -70,7 +71,8 @@ class World {
 
 interface IStatus {
     id : number;
-    damage( attacker : IStatus );
+    damage ( attacker : IStatus );
+    propels( force : number, point : CANNON.Vec3 );
 }
 
 interface IGround {

@@ -37,6 +37,10 @@
           "type": "number"
         },
         {
+          "name": "propelForce",
+          "type": "number"
+        },
+        {
           "name": "hookForce",
           "type": "number"
         }
